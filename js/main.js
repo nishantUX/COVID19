@@ -885,7 +885,7 @@ $(document).ready(function () {
         
     });
 
-// ==================== JSON COmplete ====================
+// ==================== JSON Complete ====================
     
     ScrollOut({
     targets: '.img-container, .block-1 div, .block-2 div, .block-3 div, .block-4 div, .block-5 div, .stats-block div, .book-test-block div'
