@@ -131,7 +131,8 @@ $(document).ready(function () {
                             maxTicksLimit: 10,
                             callback: function(label, index, labels) {
                                 if(label == 0) label = "0";
-                                else label = (((label.toString()).slice(0,-3)) + 'k');
+                                else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+								else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
                                 return label;
                             },
                             padding: 10
@@ -205,7 +206,8 @@ $(document).ready(function () {
                             maxTicksLimit: 10,
                             callback: function(label, index, labels) {
                                 if(label == 0) label = "0";
-                                else label = (((label.toString()).slice(0,-3)) + 'k');
+                                else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+								else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
                                 return label;
                             },
                             padding: 10
@@ -284,7 +286,8 @@ $(document).ready(function () {
                             maxTicksLimit: 10,
                             callback: function(label, index, labels) {
                                 if(label == 0) label = "0";
-                                else label = (((label.toString()).slice(0,-3)) + 'k');
+                                else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+								else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
                                 return label;
                             },
                             padding: 10
@@ -346,7 +349,13 @@ $(document).ready(function () {
                     yAxes: [{
                         display: true,
                         ticks: {
-                            maxTicksLimit: 10,
+                            maxTicksLimit: 8,
+							callback: function(label, index, labels) {
+                                if(label == 0) label = "0";
+                                else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+								else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
+                                return label;
+                            },
                             padding: 10
                         }
                     }]
@@ -431,8 +440,9 @@ $(document).ready(function () {
                                 maxTicksLimit: 10,
                                 callback: function(label, index, labels) {
                                     if(label == 0) label = "0";
-                                    else label = (((label.toString()).slice(0,-3)) + 'k');
-                                    return label;
+									else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+									else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
+									return label;
                                 },
                                 padding: 10
                             }
@@ -505,8 +515,9 @@ $(document).ready(function () {
                                 maxTicksLimit: 10,
                                 callback: function(label, index, labels) {
                                     if(label == 0) label = "0";
-                                    else label = (((label.toString()).slice(0,-3)) + 'k');
-                                    return label;
+									else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+									else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
+									return label;
                                 },
                                 padding: 10
                             }
@@ -584,8 +595,9 @@ $(document).ready(function () {
                                 maxTicksLimit: 10,
                                 callback: function(label, index, labels) {
                                     if(label == 0) label = "0";
-                                    else label = (((label.toString()).slice(0,-3)) + 'k');
-                                    return label;
+									else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+									else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
+									return label;
                                 },
                                 padding: 10
                             }
@@ -646,7 +658,13 @@ $(document).ready(function () {
                     yAxes: [{
                         display: true,
                         ticks: {
-                            maxTicksLimit: 10,
+                            maxTicksLimit: 8,
+							callback: function(label, index, labels) {
+                                    if(label == 0) label = "0";
+									else if(label < 1000000) label = ((((label/1000).toFixed(1)).toString())+' k');
+									else if(1000000 <= label < 1000000000) label = ((((label/1000000).toFixed(2)).toString())+' M');
+									return label;
+                                },
                             padding: 10
                         }
                     }]
@@ -883,4 +901,3 @@ $(document).ready(function () {
     });
     
 });
-
